@@ -1,1 +1,7 @@
-<p>update-recipe works!</p>
+<form [formGroup]="form">
+  <label>Név: <input formControlName="name"></label>
+  <label>Előkészítési idő: <input type="number" formControlName="prepTimeMinutes"></label>
+  <label>Sütési idő: <input type="number" formControlName="cookTimeMinutes"></label>
+  <label>Konyha típusa: <input formControlName="cuisine"></label>
+  <button type="submit" [disabled]="form.invalid">Mentés</button>
+</form>
