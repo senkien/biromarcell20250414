@@ -1,1 +1,6 @@
-<p>read-recipe works!</p>
+<form [formGroup]="form">
+  <label>Név: <input formControlName="name" disabled></label>
+  <label>Előkészítési idő: <input formControlName="prepTimeMinutes" disabled></label>
+  <label>Sütési idő: <input formControlName="cookTimeMinutes" disabled></label>
+  <label>Konyha típusa: <input formControlName="cuisine" disabled></label>
+</form>
