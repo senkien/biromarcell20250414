@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+form: FormGroup;
 
-@Component({
-  selector: 'app-update-recipe',
-  standalone: false,
-  templateUrl: './update-recipe.component.html',
-  styleUrl: './update-recipe.component.css'
-})
-export class UpdateRecipeComponent {
+constructor(private fb: FormBuilder, private route: ActivatedRoute) {}
 
+ngOnInit(): void {
+  const recipe = this.route.snapshot.data['recipe'];
+
+  this.form = this.fb.group({
+    name: [recipe.name, Validators.required],
+    prepTimeMinutes: [recipe.prepTimeMinutes, [Validators.required, Validators.min(5)]],
+    cookTimeMinutes: [recipe.cookTimeMinutes, [Validators.required, Validators.min(5)]],
+    cuisine: [recipe.cuisine, Validators.required]
+  });
 }
+
