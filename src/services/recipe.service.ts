@@ -1,9 +1,3 @@
-import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class RecipeService {
-  
-
+getRecipes(): Observable<RecipeResponse> {
+  return this.http.get<RecipeResponse>('https://dummyjson.com/recipes');
 }
