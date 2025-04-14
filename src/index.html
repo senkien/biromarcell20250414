@@ -8,6 +8,33 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+
+  <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Név</th>
+      <th>Nehézség</th>
+      <th>Értékelés</th>
+      <th>Konyha</th>
+      <th>Műveletek</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let recipe of recipes">
+      <td>{{ recipe.id }}</td>
+      <td>{{ recipe.name }}</td>
+      <td>{{ recipe.difficulty }}</td>
+      <td>{{ recipe.rating }}</td>
+      <td>{{ recipe.cuisine }}</td>
+      <td>
+        <button [routerLink]="['read', recipe.id]">Megtekintés</button>
+        <button [routerLink]="['update', recipe.id]">Szerkesztés</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
   <app-root></app-root>
 </body>
 </html>
